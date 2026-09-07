@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LehDev TG Host</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>LehDev <span>TG Host</span></h1>
+  <div id="connState" class="badge offline">Не подключено</div>
+</header>
+
+<main>
+
+  <section id="setupCard" class="card">
+    <h2>Настройка подключения</h2>
+    <p class="hint">Введи данные из Firebase (те же, что указаны в Настройках локальной программы).</p>
+    <label>Firebase Database URL</label>
+    <input id="fbUrl" type="text" placeholder="https://your-project-default-rtdb.firebaseio.com">
+    <label>Секретный ключ устройства</label>
+    <input id="fbSecret" type="text" placeholder="lehdev_secret_123">
+    <button id="saveConfigBtn">Сохранить и подключиться</button>
+  </section>
+
+  <section id="mainCard" class="card hidden">
+    <div class="row-between">
+      <h2>Боты</h2>
+      <span id="lastSeen" class="hint">—</span>
+    </div>
+    <div id="botsList"></div>
+
+    <div class="screenshot-block">
+      <button id="screenshotBtn">📸 Сделать скриншот</button>
+      <span id="shotStatus" class="hint"></span>
+      <div id="shotWrap"><img id="shotImg" alt="Скриншот появится здесь"></div>
+    </div>
+
+    <button id="changeConfigBtn" class="link-btn">Изменить настройки подключения</button>
+  </section>
+
+</main>
+
+<footer>LehDev TG Host — удалённое управление ботами</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
